@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include("../template/head.ejs") %>
+  </head>
+  <body>
+    <%- include("../template/navbar.ejs") %>
+
+    <div class="container pt-14">
+      <!-- Random -->
+      <a href="/categories/all">
+        <div class="w-full card mt-8 transition duration-300 ease-in-out hover:scale-105">
+          <h1 class="font-bold text-xl mb-3">All Articles</h1>
+          <p>Articles contains everything that is in the database.</p>
+          <p>The main purpose is to see all articles in one place.</p>
+        </div>
+      </a>
+
+      <!-- Test Markdown Converter -->
+      <a href="/categories/mdtest">
+        <div class="w-full card mt-8 transition duration-300 ease-in-out hover:scale-105">
+          <h1 class="font-bold text-xl mb-3">Markdown Tester</h1>
+          <p>Articles contains an example of a markdown file.</p>
+          <p>The main purpose is to test the markdown compiler.</p>
+        </div>
+      </a>
+
+      <!-- Important Articles -->
+      <a href="/categories/important">
+        <div class="w-full card mt-8 transition duration-300 ease-in-out hover:scale-105">
+          <h1 class="font-bold text-xl mb-3">Important</h1>
+          <p>Articles contains important files.</p>
+          <p>The main purpose is to put something important here.</p>
+        </div>
+      </a>
+
+      <!-- Blog -->
+      <a href="/categories/blog">
+        <div class="w-full card mt-8 transition duration-300 ease-in-out hover:scale-105">
+          <h1 class="font-bold text-xl mb-3">Blog</h1>
+          <p>Articles contains regular articles, same as blog section.</p>
+          <p>The main purpose is to post something about anything so that it looks like a blog.</p>
+        </div>
+      </a>
+    </div>
+  </body>
+</html>

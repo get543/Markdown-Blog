@@ -1,0 +1,55 @@
+<!-- Still using bootstrap 5, save for the last one -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../template/head.ejs") %>
+  </head>
+  <body>
+    <%- include("../template/navbar.ejs") %>
+
+    <div class="container pt-14">
+      <div class="flex flex-wrap items-center justify-center mt-10">
+        <div class="w-full px-4 mb-10">
+          <!-- New Button -->
+          <a href="/articles/new" class="text-base font-semibold text-white bg-green py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg tansition duration-500 block text-center">
+            New Article
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center">
+        <% articles.forEach(article => { %>
+
+          <div id="article" class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-darkish rounded-xl shadow-lg overflow-hidden mb-10">
+              <div class="py-8 px-6">
+                <h3>
+                  <a href="articles/<%= article.id %>" class="block mb-3 font-semibold text-light text-3xl hover:text-primary truncate">
+                    <%= article.title %>
+                  </a>
+                </h3>
+
+                <p class="font-extralight text-xs text-graylight mb-2">
+                  <%= article.createdAt.toLocaleDateString() %>
+                </p>
+                
+                <p class="font-medium text-lg text-gray mb-6">
+                  <%= article.description %>
+                </p>
+                
+                <a href="/articles/<%= article.slug %>" class="font-medium text-sm text-white bg-primary py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block">Read More</a>
+                
+                <a href="/articles/edit/<%= article.id %>" class="font-medium text-sm text-white bg-green py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block">Edit</a>
+                
+                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="inline-block">
+                  <button type="submit" class="font-medium text-white bg-red-600 py-3 px-6 rounded-xl w-full hover:opacity-80 hover:shadow-lg tansition duration-500">Delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>

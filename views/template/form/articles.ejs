@@ -1,0 +1,56 @@
+<!-- Taken from portfolio website -->
+<div class="w-full lg:mx-auto">
+  <!-- Title -->
+  <div class="w-full px-4 mb-8">
+    <label for="title" class="font-bold text-primary">Title</label>
+    <input
+      type="text"
+      required
+      value="<%= article.title %>"
+      name="title"
+      id="title"
+      class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+    />
+  </div>
+
+  <!-- Description -->
+  <div class="w-full px-4 mb-8">
+    <label for="description" class="font-bold text-primary">Description</label>
+    <textarea
+      type="text"
+      name="description"
+      id="description"
+      class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-20"
+    ><%= article.description %></textarea>
+  </div>
+  
+  <!-- Markdown -->
+  <div class="w-full px-4 mb-8">
+    <label for="markdown" class="font-bold text-primary">Markdown</label>
+    <textarea
+      type="text"
+      required
+      name="markdown"
+      id="markdown"
+      class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-96"
+    ><%= article.markdown %></textarea>
+  </div>
+  
+  <!-- Button -->
+  <div class="w-full px-4">
+    <div class="flex flex-wrap items-center justify-center">
+      <!-- Cancel -->
+      <div class="w-6/12 pr-4">
+        <a
+          href="/"
+          class="font-semibold text-white bg-primary py-3 px-8 rounded-md w-full hover:opacity-80 hover:shadow-lg tansition duration-500 block text-center"
+        >Cancel</a>
+      </div>
+    
+      <!-- Save -->
+      <div class="w-6/12 pl-4">
+        <button type="submit" class="font-semibold text-white bg-primary py-3 px-8 rounded-md w-full hover:opacity-80 hover:shadow-lg tansition duration-500">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
