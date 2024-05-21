@@ -25,21 +25,21 @@ router.get("/edit/:id", async (req, res) => {
 router.get("/:slug", async (req, res) => {
   const article = await Article.findOne({ slug: req.params.slug });
   if (article == null) res.redirect("/");
-  
+
   res.render("articles/show", {
     article: article,
     title: "View Article",
-    subtitle: "Reading.."
+    subtitle: "Reading..",
   });
 });
 
 // post method (create new)
 router.post(
-  "/", 
+  "/",
   async (req, res, next) => {
     req.article = new Article();
     next();
-  }, 
+  },
   saveArticleAndRedirect("new")
 );
 
@@ -72,14 +72,13 @@ function saveArticleAndRedirect(path) {
       res.redirect(`/articles/${article.slug}`);
     } catch (error) {
       console.error(error);
-      
+
       res.render(`articles/admin/${path}`, {
         article: article,
         title: "Edit Article",
-        subtitle: "Edit Article"
+        subtitle: "Edit Article",
       });
     }
-    
   };
 }
 

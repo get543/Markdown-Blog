@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/categories", (req, res) => {
   res.render("articles/categories", {
     title: "Categories",
-    subtitle: "Blog Categories"
+    subtitle: "Blog Categories",
   });
 });
 
@@ -15,7 +15,7 @@ router.get("/categories/random", async (req, res) => {
   res.render("articles/index", {
     articles: articles,
     title: "All Articles",
-    subtitle: "Blog Articles"
+    subtitle: "Blog Articles",
   });
 });
 

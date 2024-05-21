@@ -30,7 +30,7 @@ module.exports = {
       "2xl": "1320px",
       "sm": "360px",
       "md": "768px",
-      "lg": "1024px"
+      "lg": "1024px",
     },
   },
   plugins: [],
