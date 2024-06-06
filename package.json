@@ -4,8 +4,8 @@
   "description": "a markdown blog website.",
   "main": "server.js",
   "scripts": {
-    "start": "npm run compile && node server.js",
-    "test": "nodemon server.js",
+    "start": "node .",
+    "test": "npm run compile && nodemon .",
     "watch": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
     "compile": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css",
     "lint:check": "eslint .",
