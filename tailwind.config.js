@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       container: {
         center: true,
-        padding: "5px",
+        padding: "18px",
       },
       borderRadius: ["responsive", "hover"],
       colors: {
@@ -27,10 +27,11 @@ module.exports = {
       },
     },
     screens: {
-      "2xl": "1320px",
-      "sm": "360px",
+      "sm": "640px",
       "md": "768px",
       "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [],
