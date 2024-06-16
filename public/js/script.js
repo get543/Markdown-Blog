@@ -10,11 +10,11 @@ window.onscroll = function () {
   }
 };
 
-document.addEventListener("click", function () {
+function toggleNavMenu() {
   // Hamburger Line
   const hamburger = document.querySelector("#hamburger");
   const navMenu = document.querySelector("#nav-menu");
 
   hamburger.classList.toggle("hamburger-active");
   navMenu.classList.toggle("hidden");
-});
+}

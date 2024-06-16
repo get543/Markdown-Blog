@@ -4,17 +4,15 @@
 <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
   <div class="container">
     <div class="flex items-center justify-between relative">
-      <div class="px-4">
-        <a href="/" class="font-bold text-lg text-primary block py-6"> 
-            <%= subtitle %> 
-        </a>
-      </div>
+      <a href="/" class="font-bold text-lg text-primary block py-6"> <%= subtitle %> </a>
       <div class="flex items-center px-4">
+        <!-- HAMBURGER LINE -->
         <button
           id="hamburger"
           name="hamburger"
           type="button"
           class="block absolute right-4 lg:hidden"
+          onclick="toggleNavMenu()"
         >
           <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
           <span class="hamburger-line transition duration-300 ease-in-out"></span>
@@ -25,42 +23,35 @@
 
         <nav
           id="nav-menu"
-          class="hidden absolute py-5 bg-white dark:bg-dark shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+          class="hidden absolute py-6 bg-white dark:bg-dark shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-xl mt-3"
         >
           <ul class="block lg:flex">
             <li class="group">
               <a
-                href="#home"
+                href="/"
                 class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
                 >Home</a
               >
             </li>
             <li class="group">
               <a
-                href="#about"
+                href="/about"
                 class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
                 >About</a
               >
             </li>
             <li class="group">
+                <a
+                  href="/contact"
+                  class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
+                  >Contact</a
+                >
+              </li>
+            <li class="group">
               <a
-                href="#login"
+                href="/login"
                 class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
                 >Login</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="#signup"
-                class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
-                >Sign Up</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="#contact"
-                class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary"
-                >Contact</a
               >
             </li>
           </ul>

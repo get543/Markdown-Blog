@@ -7,7 +7,7 @@
   <body>
     <%- include("../template/navbar.ejs") %>
 
-    <div class="container pt-14">
+    <div class="container pt-16">
       <div class="flex flex-wrap items-center justify-center mt-10">
         <div class="w-full px-4 mb-10">
           <!-- New Button -->
@@ -37,12 +37,12 @@
                   <%= article.description %>
                 </p>
                 
-                <a href="/articles/<%= article.slug %>" class="font-medium text-sm text-white bg-primary py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block">Read More</a>
+                <a href="/articles/<%= article.slug %>" class="font-medium text-sm text-white bg-primary py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block mt-3">Read More</a>
                 
-                <a href="/articles/edit/<%= article.id %>" class="font-medium text-sm text-white bg-green py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block">Edit</a>
+                <a href="/articles/edit/<%= article.id %>" class="font-medium text-sm text-white bg-green py-3 px-6 rounded-xl hover:opacity-80 tansition duration-500 inline-block mt-3">Edit</a>
                 
                 <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="inline-block">
-                  <button type="submit" class="font-medium text-white bg-red-600 py-3 px-6 rounded-xl w-full hover:opacity-80 hover:shadow-lg tansition duration-500">Delete</button>
+                  <button type="submit" class="font-medium text-white bg-red-600 py-3 px-6 rounded-xl w-full hover:opacity-80 hover:shadow-lg tansition duration-500 mt-3">Delete</button>
                 </form>
               </div>
             </div>
