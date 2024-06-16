@@ -61,7 +61,7 @@ app.use("/categories", categoryRouter);
 
 // render 404.ejs when page not found
 app.use((req, res) => {
-  res.status(404).render("error/404", { title: "404", subtitle: "!" });
+  res.status(404).render("error/404", { title: "404", subtitle: "Error!" });
 });
 
 // listen to localhost on port 3000
