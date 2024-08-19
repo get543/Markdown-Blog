@@ -18,12 +18,15 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dompurify": "^2.0.8",
+    "dompurify": "^3.1.6",
     "dotenv": "^16.4.5",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "jsdom": "^16.2.1",
-    "marked": "^13.0.0",
+    "highlight.js": "^11.10.0",
+    "jsdom": "^24.1.1",
+    "marked": "^14.0.0",
+    "marked-footnote": "^1.2.2",
+    "marked-highlight": "^2.1.4",
     "method-override": "^3.0.0",
     "mongoose": "^8.4.1",
     "slugify": "^1.4.0"
