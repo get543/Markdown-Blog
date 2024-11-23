@@ -95,8 +95,7 @@ https://www.mongodb.com/cloud/atlas/register
 <details>
   <summary>Forgot DB Password<summary>
 
-  > [!NOTE]
-  > Forgot password, try this step :
+  > Try this step :
   > - Click on **Database Access** under SECURITY
   > - Click **EDIT**
   > - Click **Edit Password**
@@ -107,7 +106,6 @@ https://www.mongodb.com/cloud/atlas/register
 <details>
   <summary>Problem Connecting to MongoDB Atlas</summary>
 
-  > [!NOTE]
   > ```
   > Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
   > at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
