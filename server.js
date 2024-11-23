@@ -4,7 +4,7 @@ const methodOverride = require("method-override");
 const cors = require("cors");
 
 const articleRouter = require("./routes/articles"); // article router
-const categoryRouter = require("./routes/categories"); // category router
+// const categoryRouter = require("./routes/categories"); // category router
 const Article = require("./models/article"); // contains database scheme
 
 const app = express();
@@ -39,6 +39,23 @@ app.get("/categories", (req, res) => {
   });
 });
 
+// render the about.ejs file
+app.get("/about", (req, res) => {
+  res.render("articles/about", {
+    title: "About",
+    subtitle: "About Page",
+  });
+});
+
+// render the contact.ejs file
+app.get("/contact", (req, res) => {
+  res.render("articles/contact", {
+    title: "Contact",
+    subtitle: "Contact Page",
+  });
+});
+
+
 // random category, loads all blog articles (index.ejs)
 app.get("/categories/all", async (req, res) => {
   const articles = await Article.find().sort({ createdAt: "desc" });
@@ -57,7 +74,7 @@ app.get("/categories/mdtest", (req, res) => {
 
 // router
 app.use("/articles", articleRouter);
-app.use("/categories", categoryRouter);
+// app.use("/categories", categoryRouter);
 
 // render 404.ejs when page not found
 app.use((req, res) => {

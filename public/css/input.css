@@ -64,7 +64,7 @@ html {
     normal 18px/1.25 Source Sans Pro,
     sans-serif;
   color: #c8d3f5;
-  hyphens: auto;
+  /* hyphens: auto; */
   word-wrap: break-word;
 
   background: #222436;
@@ -79,7 +79,7 @@ html {
   border: 0px;
 }
 
-/* @group Headings */
+/* !@group Headings */
 .markdown h1,
 .markdown h2,
 .markdown h3,
@@ -123,9 +123,9 @@ html {
 .markdown h3 em {
   color: grey;
 }
-/* @end Headings */
+/* !@end Headings */
 
-/* @group Links */
+/* !@group Links */
 .markdown a {
   color: #0366d6;
   text-decoration: none;
@@ -145,7 +145,7 @@ html {
   color: #3e8ae2;
   text-decoration: none;
 }
-/* @end Links */
+/* !@end Links */
 
 .markdown small {
   font-size: 65%;
@@ -155,7 +155,7 @@ html {
   margin-top: 0.75rem;
 }
 
-/* @group Lists */
+/* !@group Lists */
 .markdown ul {
   list-style-type: disc;
 }
@@ -197,9 +197,9 @@ html {
   margin: 0.5em 0;
   margin-left: 1rem;
 }
-/* @end Lists */
+/* !@end Lists */
 
-/* @group Abbr */
+/* !@group Abbr */
 .markdown abbr {
   font-variant: small-caps;
   font-weight: 600;
@@ -210,9 +210,9 @@ html {
 .markdown abbr[title]:hover {
   cursor: help;
 }
-/* @end Abbr */
+/* !@end Abbr */
 
-/* @group Block Quotes */
+/* !@group Block Quotes */
 .markdown blockquote {
   padding-left: 1em;
   border: unset;
@@ -233,11 +233,117 @@ html {
   content: "— ";
   opacity: 0.05;
 }
-/* @end Block Quotes */
+/* !@end Block Quotes */
 
-/* @group Pre-formatted and Code */
-/* Multiline Code */
-.markdown pre {
+/* !@group Pre-formatted and Code */
+/* ?a11y-dark.css for highlight.js */
+/* ?Refrence: https://highlightjs.org/download */
+.hljs {
+  display: block;
+  padding: 0.5em;
+  background-color: #333;
+  color: #abb2bf;
+}
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #d4d0ab;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #ffa07a;
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5ab35;
+}
+
+/* Yellow */
+.hljs-attribute {
+  color: #ffd700;
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #abe338;
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+  color: #00e0e0;
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #dcc6e0;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+    color: highlight;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    font-weight: bold;
+  }
+}
+
+/* ?hljs, markedHighlight css */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/* ?Multiline Code */
+pre {
   overflow: auto;
   margin: 0.75rem 0;
   padding: 0.5rem;
@@ -248,8 +354,8 @@ html {
   border-radius: 10px;
 }
 
-/* One Liner */
-.markdown code {
+/* ?One Liner */
+code {
   padding: 0 0.25em;
   white-space: pre;
   font-family:
@@ -261,20 +367,20 @@ html {
   font-size: 75%;
 }
 
-.markdown pre code {
+pre code {
   padding: 0;
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
-.markdown pre code,
-.markdown pre tt {
+pre code,
+pre tt {
   background-color: transparent;
   border: none;
 }
-/* @end Pre-formatted and Code */
+/* !@end Pre-formatted and Code */
 
-/* @group Tables */
+/* !@group Tables */
 .markdown table {
   margin: 0.75rem 0;
   padding: 0;
@@ -318,4 +424,4 @@ html {
 .markdown table tr td :last-child {
   margin-bottom: 0;
 }
-/* @end Tables */
+/* !@end Tables */
