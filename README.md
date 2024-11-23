@@ -93,7 +93,7 @@ https://www.mongodb.com/cloud/atlas/register
 6. Replace `<db_password>` with your password that you've created earlier.
 
 <details>
-  <summary>Forgot DB Password<summary>
+  <summary>Forgot DB Password</summary>
 
   > Try this step :
   > - Click on **Database Access** under SECURITY
