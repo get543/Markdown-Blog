@@ -92,14 +92,14 @@ https://www.mongodb.com/cloud/atlas/register
 
 6. Replace `<db_password>` with your password that you've created earlier.
 
-> ![NOTE]- Forgot password
+> [!NOTE] Forgot password
 > - Click on **Database Access** under SECURITY
 > - Click **EDIT**
 > - Click **Edit Password**
 > - Click **Auto Regenerate Secure Password**
 > - Click **Copy** 
 
-> ![NOTE]- Problem Connecting
+> [!NOTE] Problem Connecting
 > ```
 > Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
 > at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
