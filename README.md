@@ -3,6 +3,7 @@
   <img
     src="./public/img/blog.png"
     width="300px"
+    style="underline: none;"
   >
   <br>
   Markdown Blog
