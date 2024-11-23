@@ -92,28 +92,36 @@ https://www.mongodb.com/cloud/atlas/register
 
 6. Replace `<db_password>` with your password that you've created earlier.
 
-> [!NOTE]
-> Forgot password, try this step :
-> - Click on **Database Access** under SECURITY
-> - Click **EDIT**
-> - Click **Edit Password**
-> - Click **Auto Regenerate Secure Password**
-> - Click **Copy** 
+<details>
+  <summary>Forgot DB Password<summary>
 
-> [!NOTE]
-> ***Problem Connecting***
-> ```
-> Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
-> at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
-> errno: 'ETIMEOUT',
->   code: 'ETIMEOUT',
->   syscall: 'queryTxt',
->   hostname: 'cluster0-ghis2.mongodb.net'
-> }
-> ```
-> I was having an issue connecting to MongoDB Atlas because of a DNS record problem. Maybe you can try this steps :
-> - Change your DNS to using google dns `8.8.8.8` or `8.8.4.4`
-> - Or you can try changing the driver's version (Step 5) to `2.2.12 or later`
+  > [!NOTE]
+  > Forgot password, try this step :
+  > - Click on **Database Access** under SECURITY
+  > - Click **EDIT**
+  > - Click **Edit Password**
+  > - Click **Auto Regenerate Secure Password**
+  > - Click **Copy** 
+</details>
+
+<details>
+  <summary>Problem Connecting to MongoDB Atlas</summary>
+
+  > [!NOTE]
+  > ```
+  > Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
+  > at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
+  > errno: 'ETIMEOUT',
+  >   code: 'ETIMEOUT',
+  >   syscall: 'queryTxt',
+  >   hostname: 'cluster0-ghis2.mongodb.net'
+  > }
+  > ```
+  > I was having an issue connecting to MongoDB Atlas because of a DNS record problem. Maybe you can try this steps :
+  > - Change your DNS to using google dns `8.8.8.8` or `8.8.4.4`
+  > - Or you can try changing the driver's version (Step 5) to `2.2.12 or later`
+</details>
+
 
 ### 💻 Environment Setup
 
