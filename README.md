@@ -44,15 +44,32 @@
 
 ---
 
-## 📐 Setup
+## Table of Contents
 
-### 📅 Database Setup
+- [Preview](#preview)
+- [📐 Setup](#-setup)
+  - [📅 Database Setup](#-database-setup)
+    - [🔻 Local](#-local)
+    - [☁ MongoDB Atlas](#-mongodb-atlas)
+  - [💻 Environment Setup](#-environment-setup)
+  - [📁 Project Setup](#-project-setup)
+- [📃 ToDo](#-todo)
+
+
+# 📷 Preview
+
+![[./preview/blogs.png]]
+![[./preview/show.png]]
+
+# 📐 Setup
+
+## 📅 Database Setup
 
 You can choose between the two, you don't have to install or use both of them.
 I recommend using MongoDB Atlas if you can because you don't need to install anything
 and the database is already on the cloud and you can find free hosting services to deploy your website.
 
-#### 🔻 Local
+### 🔻 Local
 
 1. MongoDB Installation
 Download MongoDB Shell using winget with this command
@@ -77,7 +94,7 @@ db.createCollection("yourcollectionname")
 ```
 Now you can just leave it like that
 
-#### ☁ MongoDB Atlas
+### ☁ MongoDB Atlas
 
 1. Create your MongoDB Atlas account
 https://www.mongodb.com/cloud/atlas/register
@@ -121,7 +138,7 @@ https://www.mongodb.com/cloud/atlas/register
 </details>
 
 
-### 💻 Environment Setup
+## 💻 Environment Setup
 
 1. NodeJS Installation
 Make sure that you have NodeJS installed on your system.
@@ -140,7 +157,7 @@ winget install Microsoft.VisualStudioCode
 ```
 More about Visual Studio Code : https://code.visualstudio.com/
 
-### 📁 Project Setup
+## 📁 Project Setup
 
 1. Clone project
 ```
@@ -175,7 +192,7 @@ npm start
 
 5. See the result on http://localhost:3000
 
-## 📃 ToDo
+# 📃 ToDo
 
 - [x] Try to use TaildwindCSS
 - [x] Markdown theme from Markdown-Website project
@@ -183,7 +200,7 @@ npm start
 - [x] Website theme from portfolio-tailwindcss
 - [x] Fix the css mess in input.css (markdown css) & fix font-family situation
 - [ ] Create an admin page (edit, add articles) and viewer page (no edit & add button)
-- [ ] Code highlight and format for code blocks
+- [x] Code highlight and format for code blocks
 - [x] Clickable title from the card menu
 - [x] Check if MongoDB Atlas still a viable option
 - [x] Make that you can view this project on other machine when hosted locally
