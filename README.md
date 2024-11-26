@@ -46,24 +46,30 @@
 
 ## Table of Contents
 
-- [Preview](#preview)
+- [📷 Preview](#-preview)
+  - [📰 List Articles](#-list-articles)
+  - [📖 Display Articles](#-display-articles)
 - [📐 Setup](#-setup)
-  - [📅 Database Setup](#-database-setup)
+  - [📅 1. Database Setup](#-1-database-setup)
     - [🔻 Local](#-local)
     - [☁ MongoDB Atlas](#-mongodb-atlas)
-  - [💻 Environment Setup](#-environment-setup)
-  - [📁 Project Setup](#-project-setup)
+  - [💻 2. Environment Setup](#-2-environment-setup)
+  - [📁 3. Project Setup](#-3-project-setup)
 - [📃 ToDo](#-todo)
 
+---
 
 # 📷 Preview
 
-![./preview/blogs.png]
-![./preview/show.png]
+## 📰 List Articles
+<img src="./preview/blogs.png">
+
+## 📖 Display Articles
+<img src="./preview/show.png">
 
 # 📐 Setup
 
-## 📅 Database Setup
+## 📅 1. Database Setup
 
 You can choose between the two, you don't have to install or use both of them.
 I recommend using MongoDB Atlas if you can because you don't need to install anything
@@ -138,7 +144,7 @@ https://www.mongodb.com/cloud/atlas/register
 </details>
 
 
-## 💻 Environment Setup
+## 💻 2. Environment Setup
 
 1. NodeJS Installation
 Make sure that you have NodeJS installed on your system.
@@ -157,7 +163,7 @@ winget install Microsoft.VisualStudioCode
 ```
 More about Visual Studio Code : https://code.visualstudio.com/
 
-## 📁 Project Setup
+## 📁 3. Project Setup
 
 1. Clone project
 ```
