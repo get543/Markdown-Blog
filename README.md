@@ -58,8 +58,8 @@
 
 # 📷 Preview
 
-![[./preview/blogs.png]]
-![[./preview/show.png]]
+![./preview/blogs.png]
+![./preview/show.png]
 
 # 📐 Setup
 
