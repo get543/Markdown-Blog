@@ -49,6 +49,9 @@
 - [📷 Preview](#-preview)
   - [📰 List Articles](#-list-articles)
   - [📖 Display Articles](#-display-articles)
+- [✅ Features](#-features)
+  - [📥 Markdown Renderer](#-markdown-renderer)
+  - [📨 Blog](#-blog)
 - [📐 Setup](#-setup)
   - [📅 1. Database Setup](#-1-database-setup)
     - [🔻 Local](#-local)
@@ -62,10 +65,29 @@
 # 📷 Preview
 
 ## 📰 List Articles
+
 <img src="./preview/blogs.png">
 
 ## 📖 Display Articles
+
 <img src="./preview/show.png">
+
+# ✅ Features
+
+## 📥 Markdown Renderer
+
+- [x] [Github Flavoured Markdown (GFM)](https://github.github.com/gfm/) specification
+- [x] Code block syntax highlighting
+- [x] GFM heading, footnote
+
+## 📨 Blog
+
+- [x] Edit Article
+- [x] Delete Article
+- [x] New Article
+- [x] MongoDB Database
+- [ ] Admin Login
+- [ ] Login, Sign Up
 
 # 📐 Setup
 
