@@ -100,32 +100,37 @@ and the database is already on the cloud and you can find free hosting services 
 ### 🔻 Local
 
 1. MongoDB Installation
-Download MongoDB Shell using winget with this command
+   Download MongoDB Shell using winget with this command
+
 ```powershell
 winget install MongoDB.Shell
 ```
 
 2. Enter to MongoDB using MongoDB Shell
-This defaults to mongodb://127.0.0.1:27017
+   This defaults to mongodb://127.0.0.1:27017
+
 ```powershell
 mongosh
 ```
 
-3. Use database 
+3. Use database
+
 ```
 use yourdatabase
 ```
 
 4. Create a collection (tables)
+
 ```
 db.createCollection("yourcollectionname")
 ```
+
 Now you can just leave it like that
 
 ### ☁ MongoDB Atlas
 
 1. Create your MongoDB Atlas account
-https://www.mongodb.com/cloud/atlas/register
+   https://www.mongodb.com/cloud/atlas/register
 
 2. After selecting your project, cluster, and server location, you can add your IP address in the **Network Access** tab under SECURITY. If you want, you can check for **Allow access from anywhere** so that you don't have to do this again.
 
@@ -140,59 +145,69 @@ https://www.mongodb.com/cloud/atlas/register
 <details>
   <summary>Forgot DB Password</summary>
 
-  > Try this step :
-  > - Click on **Database Access** under SECURITY
-  > - Click **EDIT**
-  > - Click **Edit Password**
-  > - Click **Auto Regenerate Secure Password**
-  > - Click **Copy** 
+> Try this step :
+>
+> - Click on **Database Access** under SECURITY
+> - Click **EDIT**
+> - Click **Edit Password**
+> - Click **Auto Regenerate Secure Password**
+> - Click **Copy**
+
 </details>
 
 <details>
   <summary>Problem Connecting to MongoDB Atlas</summary>
 
-  > ```
-  > Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
-  > at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
-  > errno: 'ETIMEOUT',
-  >   code: 'ETIMEOUT',
-  >   syscall: 'queryTxt',
-  >   hostname: 'cluster0-ghis2.mongodb.net'
-  > }
-  > ```
-  > I was having an issue connecting to MongoDB Atlas because of a DNS record problem. Maybe you can try this steps :
-  > - Change your DNS to using google dns `8.8.8.8` or `8.8.4.4`
-  > - Or you can try changing the driver's version (Step 5) to `2.2.12 or later`
-</details>
+> ```
+> Error: queryTxt ETIMEOUT cluster0-ghis2.mongodb.net
+> at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
+> errno: 'ETIMEOUT',
+>   code: 'ETIMEOUT',
+>   syscall: 'queryTxt',
+>   hostname: 'cluster0-ghis2.mongodb.net'
+> }
+> ```
+>
+> I was having an issue connecting to MongoDB Atlas because of a DNS record problem. Maybe you can try this steps :
+>
+> - Change your DNS to using google dns `8.8.8.8` or `8.8.4.4`
+> - Or you can try changing the driver's version (Step 5) to `2.2.12 or later`
 
+</details>
 
 ## 💻 2. Environment Setup
 
 1. NodeJS Installation
-Make sure that you have NodeJS installed on your system.
-The simplest way to install NodeJS on your system is by using winget with this command.
+   Make sure that you have NodeJS installed on your system.
+   The simplest way to install NodeJS on your system is by using winget with this command.
+
 ```powershell
 # For Windows Only
 winget install OpenJS.NodeJS.LTS
 ```
+
 More about NodeJS : https://nodejs.org/
 
 2. Text editor installation
-Make sure you have your text editor installed. In my case, I'm using Visual Studio Code, which you can install using winget with this command.
+   Make sure you have your text editor installed. In my case, I'm using Visual Studio Code, which you can install using winget with this command.
+
 ```powershell
 # For windows only
 winget install Microsoft.VisualStudioCode
 ```
+
 More about Visual Studio Code : https://code.visualstudio.com/
 
 ## 📁 3. Project Setup
 
 1. Clone project
+
 ```
 git clone https://github.com/get543/Markdown-Blog.git
 ```
 
 2. Install missing dependencies
+
 ```
 npm install
 ```
@@ -200,6 +215,7 @@ npm install
 3. Create a `.env` file and add this
 
 This is just an example
+
 ```
 SESSION_STATS=dev
 
@@ -207,13 +223,16 @@ MONGO_DEV_URI=mongodb://localhost:27017/yourdatabase
 
 MONGO_PROD_URI=mongodb+srv://username:password@youcluster.z2g8s.mongodb.net/yourdatabase?retryWrites=true&w=majority&appName=Yourcluster
 ```
+
 `MONGO_DEV_URI` : URI for connecting to local/remote server (in this case local server)
 `MONGO_PROD_URI` : URI for cloud database (in this case MongoDB Atlas)
-`SESSION_STATS` : 
+`SESSION_STATS` :
+
 - `prod` to use `MONGO_PROD_URI`
 - `dev` to use `MONGO_DEV_URI`
 
 4. Run the code
+
 ```
 npm start
 ```

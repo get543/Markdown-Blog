@@ -35,7 +35,6 @@
 
 /*********** Custom Markdown CSS  ***********/
 /************** Antimony CSS **************/
-
 * {
   border: 0;
   box-sizing: border-box;
@@ -237,7 +236,7 @@ html {
 
 /* !@group Pre-formatted and Code */
 /* ?a11y-dark.css for highlight.js */
-/* ?Refrence: https://highlightjs.org/download */
+/* ?Reference: https://highlightjs.org/download */
 .hljs {
   display: block;
   padding: 0.5em;
