@@ -7,7 +7,7 @@
     <%- include("../../template/navbar.ejs") %>
 
     <div class="container pt-24">
-      <form action="/articles/<%= article.id %>?_method=PUT" method="post">
+      <form action="/categories/all/articles/<%= article.id %>?_method=PUT" method="post">
         <%- include("../../template/form/articles.ejs") %>
       </form>
     </div>

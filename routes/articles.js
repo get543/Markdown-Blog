@@ -1,28 +1,33 @@
 const express = require("express");
 const Article = require("../models/article");
+const { isAuthenticated, requireAuth } = require("../authentication.middleware");
 const router = express.Router();
 
 // router new
-router.get("/new", (req, res) => {
+router.get("/new", requireAuth, isAuthenticated, (req, res) => {
   res.render("articles/admin/new", {
     article: new Article(),
     title: "New Article",
     subtitle: "New Article",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
   });
 });
 
 // router edit
-router.get("/edit/:id", async (req, res) => {
+router.get("/edit/:id", requireAuth, isAuthenticated, async (req, res) => {
   const article = await Article.findById(req.params.id);
   res.render("articles/admin/edit", {
     article: article,
     title: "Edit Article",
     subtitle: "Edit Article",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
   });
 });
 
 // router show articles
-router.get("/:slug", async (req, res) => {
+router.get("/:slug", isAuthenticated, async (req, res) => {
   const article = await Article.findOne({ slug: req.params.slug });
   if (article == null) res.redirect("/");
 
@@ -30,12 +35,16 @@ router.get("/:slug", async (req, res) => {
     article: article,
     title: "View Article",
     subtitle: "Reading..",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
   });
 });
 
 // post method (create new)
 router.post(
   "/",
+  requireAuth,
+  isAuthenticated,
   async (req, res, next) => {
     req.article = new Article();
     next();
@@ -46,6 +55,8 @@ router.post(
 // put method (edit)
 router.put(
   "/:id",
+  requireAuth,
+  isAuthenticated,
   async (req, res, next) => {
     req.article = await Article.findById(req.params.id);
     next();
@@ -54,10 +65,12 @@ router.put(
 );
 
 // delete method (delete)
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", requireAuth, async (req, res) => {
   await Article.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
+
+router.use(isAuthenticated);
 
 function saveArticleAndRedirect(path) {
   return async (req, res) => {
@@ -69,7 +82,7 @@ function saveArticleAndRedirect(path) {
 
     try {
       article = await article.save();
-      res.redirect(`/articles/${article.slug}`);
+      res.redirect(`/categories/all/articles/${article.slug}`);
     } catch (error) {
       console.error(error);
 
@@ -77,6 +90,8 @@ function saveArticleAndRedirect(path) {
         article: article,
         title: "Edit Article",
         subtitle: "Edit Article",
+        loginSignupEndpoint: "login",
+        loginSignupText: "Login",
       });
     }
   };

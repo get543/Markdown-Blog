@@ -1,0 +1,16 @@
+<!-- Still using bootstrap 5, save for the last one -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include("../template/head.ejs") %>
+  </head>
+  <body>
+    <%- include("../template/navbar.ejs") %>
+
+    <div class="container">
+      <form action="/auth/signup" method="post">
+        <%- include("../template/form/authentication.ejs") %>
+      </form>
+    </div>
+  </body>
+</html>

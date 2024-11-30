@@ -2,14 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const methodOverride = require("method-override");
 const cors = require("cors");
+const session = require("express-session");
 
 const articleRouter = require("./routes/articles"); // article router
-// const categoryRouter = require("./routes/categories"); // category router
-const Article = require("./models/article"); // contains database scheme
+const categoryRouter = require("./routes/categories"); // category router
+const authRouter = require("./routes/auth"); // auth router
+
+const { isAuthenticated } = require("./authentication.middleware"); // authentication middleware
 
 const app = express();
-const hostname = "127.0.0.1";
-const port = 3000;
+const hostname = "localhost";
+const port = process.env.PORT || 3000;
 
 // connect to mongodb database
 const connectToMongo = require("./mongodb.connect");
@@ -20,65 +23,64 @@ connectToMongo()
 app.set("view engine", "ejs");
 app.set("views", "views"); // expose views folder
 
+// session middleware
+app.use(
+  session({
+    secret: "mysecretkey", // replace with a real secret key
+    resave: false,
+    saveUninitialized: true,
+
+    cookie: {
+      secure: false, // set to true if using https
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    },
+  })
+);
+
 // middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static("public")); // expose public folder
 app.use(cors());
 
-// auto redirect to /categories when loading site
-app.get("/", async (req, res) => {
+// '/' auto redirect to '/categories'
+app.get("/", (req, res) => {
   res.redirect("/categories");
 });
 
-// render the categories.ejs file
-app.get("/categories", (req, res) => {
-  res.render("articles/categories", {
-    title: "Categories",
-    subtitle: "Blog Categories",
-  });
-});
-
 // render the about.ejs file
-app.get("/about", (req, res) => {
-  res.render("articles/about", {
+app.get("/about", isAuthenticated, (req, res) => {
+  res.render("pages/about", {
     title: "About",
     subtitle: "About Page",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
   });
 });
 
 // render the contact.ejs file
-app.get("/contact", (req, res) => {
-  res.render("articles/contact", {
+app.get("/contact", isAuthenticated, (req, res) => {
+  res.render("pages/contact", {
     title: "Contact",
     subtitle: "Contact Page",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
   });
-});
-
-
-// random category, loads all blog articles (index.ejs)
-app.get("/categories/all", async (req, res) => {
-  const articles = await Article.find().sort({ createdAt: "desc" });
-
-  res.render("articles/index", {
-    articles: articles,
-    title: "All Articles",
-    subtitle: "Blog Articles",
-  });
-});
-
-// load specific database called full-markdown-test (title)
-app.get("/categories/mdtest", (req, res) => {
-  res.redirect("/articles/full-markdown-test");
 });
 
 // router
-app.use("/articles", articleRouter);
-// app.use("/categories", categoryRouter);
+app.use("/categories/all/articles", articleRouter);
+app.use("/categories", categoryRouter);
+app.use("/auth", authRouter);
 
 // render 404.ejs when page not found
 app.use((req, res) => {
-  res.status(404).render("error/404", { title: "404", subtitle: "Error!" });
+  res.status(404).render("error/404", {
+    title: "404",
+    subtitle: "Error!",
+    loginSignupEndpoint: "login",
+    loginSignupText: "Login",
+  });
 });
 
 // listen to localhost on port 3000

@@ -1,0 +1,84 @@
+<!-- if there's given error variable -->
+<% if (locals.error) { %>
+  <div class="container pt-24">
+    <div class="bg-red-50 border-l-4 pt-6 pb-6 rounded-lg flex">
+      <!-- Icon -->
+      <div class="flex-shrink-0 px-6">
+        <svg
+          class="h-5 w-5 text-red-400"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <!-- Content -->
+      <div class="ml-3">
+        <h3 class="text-sm font-medium text-red-800">
+          ERROR!
+        </h3>
+        <div class="mt-2 text-sm text-red-700">
+          <p><%= error %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>
+
+<div class="container h-screen content-center items-center">
+  <!-- Username -->
+  <div class="w-full px-4 mb-8">
+    <label for="username" class="font-bold text-primary">Username</label>
+    <input
+        type="text"
+        id="username"
+        name="username"
+        value="tbone"
+        required
+        class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+    />
+  </div>
+
+  <!-- Password -->
+  <div class="w-full px-4 mb-8">
+    <label for="password" class="font-bold text-primary">Password</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        value="tbone123"
+        required
+        class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+    />
+  </div>
+
+  <!-- Button -->
+  <div class="w-full px-4 pb-6">
+    <div class="flex flex-wrap items-center justify-center">
+      <!-- Cancel -->
+      <div class="w-6/12 pr-4">
+      <a
+        href="/"
+        class="font-semibold text-white bg-primary py-3 px-3 rounded-md w-full hover:opacity-80 hover:shadow-lg tansition duration-500 block text-center"
+        >Cancel</a
+      >
+      </div>
+
+      <!-- Login/SignUp -->
+      <div class="w-6/12 pl-4">
+      <button
+        type="submit"
+        class="font-semibold text-white bg-primary py-3 px-3 rounded-md w-full hover:opacity-80 hover:shadow-lg tansition duration-500"
+      >
+        <%= loginSignupButton %>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

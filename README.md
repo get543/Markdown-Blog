@@ -86,8 +86,7 @@
 - [x] Delete Article
 - [x] New Article
 - [x] MongoDB Database
-- [ ] Admin Login
-- [ ] Login, Sign Up
+- [x] Login, Sign Up
 
 # 📐 Setup
 
@@ -246,12 +245,12 @@ npm start
 - [x] Implement some of the things in node-crash-course/using-ejs project
 - [x] Website theme from portfolio-tailwindcss
 - [x] Fix the css mess in input.css (markdown css) & fix font-family situation
-- [ ] Create an admin page (edit, add articles) and viewer page (no edit & add button)
+- [ ] Create an admin page
 - [x] Code highlight and format for code blocks
 - [x] Clickable title from the card menu
 - [x] Check if MongoDB Atlas still a viable option
 - [x] Make that you can view this project on other machine when hosted locally
-- [ ] Make a login page for admin only to add, delete, edit articles (yk those buttons) => broken login page
+- [x] Hide add, delete, edit articles button (available only if the user is logged in)
 - [ ] User can add their own categories
 - [ ] For example, if user create a note from category A, it suppose to show on category A
 - [x] About page, show what this website really is
